@@ -1,10 +1,11 @@
-import PIL
 from PIL import ImageFont
 from PIL import Image
 from PIL import ImageDraw
 import os
 import shutil
 from pdf_2_image import pdf_2_png
+from gooey import Gooey
+from gooey import GooeyParser
 #from pdf_2_png import pdf_2_png
 from img_2_pdf import img_2_pdf
 
@@ -14,8 +15,6 @@ from img_2_pdf import img_2_pdf
 
 # pdf file with student name on it
 # name of output pdf file
-
-
 # also some how build in a temp dir for all of the .png's
 
 
@@ -30,9 +29,19 @@ def write_over(png_image,text='Answer Key',left=1138,upper=10,right=1589,lower=1
     img.save(rename)
     return
 
-
+@Gooey
 def main():
-    pdf_2_png('scan.pdf')
+    parser = GooeyParser(description="Removing Name from student HW and stamping Answer Key GUI App!")
+    parser.add_argument('scanned_pdf', help="Select the .pdf scan you want to remove the student name from", widget='FileChooser')
+    parser.add_argument('output_pdf', help="Name your output .pdf file. Include the .pdf extension in the file name", widget='TextField')
+    parser.add_argument('temp_dir', help="Type name of temp dir you want the created .png's to be stored in", widget='TextField')
+    args = vars(parser.parse_args())
+
+    scanned_pdf = (args["scanned_pdf"])
+    output_pdf = (args["output_pdf"])
+    temp_dir_name = (args["temp_dir"])
+
+    pdf_2_png(scanned_pdf)
 
     cwd=os.getcwd()
 
@@ -49,15 +58,13 @@ def main():
     print(file_list)
 
     #convert all .png's to .pdf's
-    output_pdf_name = 'output8.pdf'
+    output_pdf_name = output_pdf
     img_2_pdf(file_list,output_pdf_name)
 
     print('Output pdf file: {}'.format(output_pdf_name))
 
-    print('Moving .png files to the temp directory. If temp directory is not empty this may return an error. Move files of of temp dir to get rid of the error')
-    tempdir = os.path.join(cwd,'temp')
-    #shutil.rmtree(tempdir)
-    os.mkdir(tempdir)
+    print('Moving .png files to the temp directory')
+    tempdir = os.path.join(cwd,temp_dir_name)
     for filename in os.listdir(cwd):
         if filename.endswith(".png"):
             full_file_name = os.path.join(cwd,filename)
