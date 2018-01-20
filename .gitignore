@@ -11,6 +11,8 @@ temp
 temp/
 tempdir/
 
+# The big Gooey install
+Gooey/
 
 # PyCharm
 .idea/
