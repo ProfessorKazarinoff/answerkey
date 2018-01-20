@@ -20,11 +20,15 @@ from img_2_pdf import img_2_pdf
 
 def write_over(png_image,text='Answer Key',left=1138,upper=10,right=1589,lower=101):
 
-    font = ImageFont.truetype("Arial.ttf",54)
+    font = ImageFont.truetype("arialbd.ttf",54)
+    #font = ImageFont.truetype('Pillow/Tests/fonts/FreeMono.ttf', 54)
+    #font = ImageFont.truetype("arial", 54)
     img=Image.open(png_image)
+    if img.mode != "RGB":
+        img = img.convert("RGB")
     draw = ImageDraw.Draw(img)
     draw.rectangle([left, upper, right, lower], fill='white', outline='white')
-    draw.text((1210, 30),text,fill='green',font=font)
+    draw.text((1210, 30),text,fill=(0, 128, 0),font=font)
     rename='name_removed-'+png_image
     img.save(rename)
     return
@@ -58,13 +62,17 @@ def main():
     print(file_list)
 
     #convert all .png's to .pdf's
+    if not output_pdf.endswith(".pdf"):
+        output_pdf += ".pdf"
     output_pdf_name = output_pdf
     img_2_pdf(file_list,output_pdf_name)
 
     print('Output pdf file: {}'.format(output_pdf_name))
 
-    print('Moving .png files to the temp directory')
+    print('Moving .png files to the {} directory'.format(temp_dir_name))
     tempdir = os.path.join(cwd,temp_dir_name)
+    if not os.path.exists(tempdir):
+        os.makedirs(tempdir)
     for filename in os.listdir(cwd):
         if filename.endswith(".png"):
             full_file_name = os.path.join(cwd,filename)

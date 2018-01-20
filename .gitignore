@@ -8,6 +8,8 @@ scans/
 *.pickle
 .temp/
 temp
+temp/
+tempdir/
 
 
 # PyCharm
