@@ -1,3 +1,16 @@
+# Any student homework scans: .pdf's or .png's
+*.pdf
+*.png
+scans/
+
+# Any config with passwords etc
+.config/
+*.pickle
+
+
+# PyCharm
+.idea/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
