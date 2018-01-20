@@ -6,6 +6,7 @@ scans/
 # Any config with passwords etc
 .config/
 *.pickle
+.temp/
 
 
 # PyCharm
