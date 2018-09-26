@@ -1,5 +1,10 @@
 from wand.image import Image
 import os
+from pathlib import Path, PurePath
+# C:\Users\peter.kazarinoff\Documents\ImageMagick
+
+p = PurePath('C:\\Users\\peter.kazarinoff\\Documents\\ImageMagick')
+os.environ['MAGICK_HOME'] = str(p)
 
 def pdf_2_png(pdf_file, res=200):
     if not os.path.exists('temp'):
