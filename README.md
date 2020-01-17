@@ -28,3 +28,12 @@ $ conda activate answerkey
 (answerkey)$ pip install gooey
 (answerkey)$ pip install Pillow
 ```
+
+#### or create environment from environment.yml and requirements.txt
+
+```text
+$ conda env create -f environment.yml
+# should install all conda and conda-forge packages
+$ conda activate answerkey
+(answerkey)$ pip install -r requirements.txt
+```

@@ -1,56 +1,7 @@
 name: answerkey
 channels:
-  - conda-forge
   - defaults
 dependencies:
-  - ca-certificates=2019.11.28=hecc5488_0
-  - certifi=2019.11.28=py37_0
-  - curl=7.65.3=h4496350_0
-  - freetype=2.10.0=h563cfd7_1
-  - gettext=0.19.8.1=hb01d8f6_1002
-  - glib=2.58.3=py37hc0c2ac7_1002
-  - jpeg=9c=hfa6e2cd_1001
-  - krb5=1.16.4=hdd46e55_0
-  - libcurl=7.65.3=h4496350_0
-  - libffi=3.2.1=h6538335_1006
-  - libiconv=1.15=hfa6e2cd_1005
-  - libpng=1.6.37=h7602738_0
-  - libssh2=1.8.2=h642c060_2
-  - libtiff=4.1.0=h21b02b4_3
-  - lz4-c=1.8.3=he025d50_1001
-  - m2w64-gcc-libgfortran=5.3.0=6
-  - m2w64-gcc-libs=5.3.0=7
-  - m2w64-gcc-libs-core=5.3.0=7
-  - m2w64-gmp=6.1.0=2
-  - m2w64-libwinpthread-git=5.0.0.4634.697f757=2
-  - msys2-conda-epoch=20160418=1
-  - openjpeg=2.3.1=h57dd2e7_3
-  - openssl=1.1.1d=hfa6e2cd_0
-  - pcre=8.43=h6538335_0
-  - pip=19.3.1=py37_0
-  - poppler=0.84.0=h1affe6b_0
-  - poppler-data=0.4.9=1
-  - python=3.7.6=h60c2a47_2
-  - setuptools=44.0.0=py37_0
-  - sqlite=3.30.1=he774522_0
-  - tk=8.6.10=hfa6e2cd_0
-  - vc=14.1=h0510ff6_4
-  - vs2015_runtime=14.16.27012=hf0eaf9b_1
-  - wheel=0.33.6=py37_0
-  - wincertstore=0.2=py37_0
-  - xz=5.2.4=h2fa13f4_1001
-  - zlib=1.2.11=h2fa13f4_1006
-  - zstd=1.4.4=hd8a0e53_1
-  - pip:
-    - colored==1.4.2
-    - gooey==1.0.3
-    - img2pdf==0.3.3
-    - numpy==1.18.1
-    - pdf2image==1.11.0
-    - pillow==7.0.0
-    - psutil==5.6.7
-    - six==1.14.0
-    - wand==0.5.8
-    - wxpython==4.0.7.post2
+  - python=3.7
+  - poppler
 prefix: C:\Users\peter.kazarinoff\AppData\Local\Continuum\Anaconda3\envs\answerkey
-
