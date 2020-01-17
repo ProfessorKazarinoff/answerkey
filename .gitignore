@@ -158,6 +158,8 @@ images/
 # Gradle
 .idea/**/gradle.xml
 .idea/**/libraries
+.idea
+.idea/
 
 # Gradle and Maven with auto-import
 # When using Gradle or Maven with auto-import, you should exclude module files,
@@ -200,4 +202,18 @@ fabric.properties
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
 
+# VS Code
 
+.vscode
+.vscode/
+
+# Any image or pdf files
+.pdf
+.PDF
+.png
+.PNG
+
+# Any temporary Directories
+tmp/
+tempdir/
+temp/

@@ -1,9 +1,10 @@
 # answerkey
-A set of scripts to remove names from .pdf scans of student homework using Python and OpenCV
+
+A set of scripts to remove names from .pdf scans of student homework using Python
 
 ## Usage
 
-scan student homework and save as .pdf
+Scan student homework and save as .pdf
 
 cd into ```answerkey``` directory. Activate ```answerkey``` environment, and run the main script ```run.py```
 
@@ -18,23 +19,12 @@ $ conda activate answerkey
 
 ### Windows
 
-```
-$ conda create -n answerkey python=3.7
+```text
+$ conda create -y -n answerkey python=3.7
 $ conda activate answerkey
-(answerkey)$ conda install pillow
-(answerkey)$ conda install pillow
-(answerkey)$ pip install wand
-(answerkey)$ conda install wxpython
+(answerkey)$ conda install -c conda-forge poppler
+(answerkey)$ pip install pdf2image
+(answerkey)$ pip install img2pdf
 (answerkey)$ pip install gooey
+(answerkey)$ pip install Pillow
 ```
-
-download .zip ImageMagick portable binaries for Windows:
-
-ftp://ftp.imagemagick.org/pub/ImageMagick/binaries
-
-ImageMagick-6.9.10-12-portable-Q16-x86.zip
-
-
-
-
-
